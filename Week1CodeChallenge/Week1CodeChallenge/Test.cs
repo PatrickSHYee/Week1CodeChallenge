@@ -46,7 +46,7 @@ namespace Week1CodeChallenge
         {
             StringAssert.AreEqualIgnoringCase("full pot coffee the keep", Program.Yodaizer("Keep the coffee pot full"));
         }
-        [Ignore]
+        //[Ignore]
         [Test, Timeout(500)]
         public void testYodaizerBonus()
         {
