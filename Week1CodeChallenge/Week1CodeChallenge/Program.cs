@@ -97,6 +97,7 @@ namespace Week1CodeChallenge
             string returnText = "";
             List<string> listWords = text.Split(' ').ToList<string>();
 
+            // check if the list of words is 3 words only
             if (listWords.Count == 3)
             {
                 listWords[2] += ",";
@@ -104,16 +105,19 @@ namespace Week1CodeChallenge
             }
             else
             {
+                // putting the tail end of the list of words at the beginning of the return
+                // string with spaces between.
                 for (int i = listWords.Count - 1; i >= 0; i--)
                 {
                     returnText += listWords[i];
+                    // When it reaches the end, it does have a space at the end
                     if (i != 0)
                     {
                         returnText += " ";
                     }
                 }
             }
-            return returnText.Trim();
+            return returnText.Trim();  // Trim is there for a safety reason.  Old code
         }
 
         /// <summary>
@@ -197,11 +201,14 @@ namespace Week1CodeChallenge
         /// <returns>the number is prime or not by a boolean value</returns>
         public static bool IsPrime(int number)
         {
+            // I want to return a bool variable to return
             bool thatPrime = true;
+
             if (number < 3)
             {
                 thatPrime = true;
             }
+            // finding the prime number
             for (int i = 2; i <= Math.Sqrt(number); i++ )
             {
                 if (number % i == 0) thatPrime = false;
